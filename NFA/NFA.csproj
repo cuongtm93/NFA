@@ -43,8 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="NFA.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="public class NFA_with_epsilon_moves.cs" />
+    <Compile Include="TapHop.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
