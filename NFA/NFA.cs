@@ -32,7 +32,7 @@ namespace NFA
         /// <returns></returns>
         public virtual Tập_Hợp<State> deltaStar(string w)
         {
-            var Q = new Tập_Hợp<State>();
+            var Q = Tập_Hợp<State>.Rỗng();
             var q = this.q0;
             foreach (var c in w)
             {
@@ -40,7 +40,7 @@ namespace NFA
                     Q += delta(q, c);
                 else
                 {
-                    var @new = new Tập_Hợp<State>();
+                    var @new = Tập_Hợp<State>.Rỗng();
                     foreach (var r in Q)
                         @new = @new + delta(r, c);
 

@@ -8,6 +8,10 @@ namespace NFA
 {
     public class Tập_Hợp<T> : List<T>
     {
+        public  static Tập_Hợp<T> Rỗng()
+        {
+            return new Tập_Hợp<T>();
+        }
         public new void Add(T element)
         {
             if (this.Contains(element))
