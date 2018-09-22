@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NFA
 {
-    public class TapHop<T> : List<T>
+    public class Tập_Hợp<T> : List<T>
     {
         public new void Add(T element)
         {
@@ -23,7 +23,7 @@ namespace NFA
         /// <param name="A"></param>
         /// <param name="B"></param>
         /// <returns></returns>
-        public static bool operator <(TapHop<T> A, TapHop<T> B)
+        public static bool operator <(Tập_Hợp<T> A, Tập_Hợp<T> B)
         {
             foreach (var x in A)
             {
@@ -40,11 +40,11 @@ namespace NFA
         /// <param name="A"></param>
         /// <param name="B"></param>
         /// <returns></returns>
-        public static bool operator >(TapHop<T> A, TapHop<T> B)
+        public static bool operator >(Tập_Hợp<T> A, Tập_Hợp<T> B)
         {
             return B < A;
         }
-        public static bool operator ==(TapHop<T> A, TapHop<T> B)
+        public static bool operator ==(Tập_Hợp<T> A, Tập_Hợp<T> B)
         {
             if (A.Count != B.Count)
                 return false;
@@ -57,7 +57,7 @@ namespace NFA
 
             return true;
         }
-        public static bool operator !=(TapHop<T> A, TapHop<T> B)
+        public static bool operator !=(Tập_Hợp<T> A, Tập_Hợp<T> B)
         {
             return !(A == B);
         }
@@ -68,9 +68,9 @@ namespace NFA
         /// <param name="A"></param>
         /// <param name="B"></param>
         /// <returns></returns>
-        public static TapHop<T> operator +(TapHop<T> A, TapHop<T> B)
+        public static Tập_Hợp<T> operator +(Tập_Hợp<T> A, Tập_Hợp<T> B)
         {
-            var C = new TapHop<T>();
+            var C = new Tập_Hợp<T>();
             C.AddRange(A);
             C.AddRange(B);
 
@@ -83,9 +83,9 @@ namespace NFA
         /// <param name="A"></param>
         /// <param name="B"></param>
         /// <returns></returns>
-        public static TapHop<T> operator ^(TapHop<T> A, TapHop<T> B)
+        public static Tập_Hợp<T> operator ^(Tập_Hợp<T> A, Tập_Hợp<T> B)
         {
-            var C = new TapHop<T>();
+            var C = new Tập_Hợp<T>();
             foreach (var x in A)
             {
                 if (B.Contains(x))

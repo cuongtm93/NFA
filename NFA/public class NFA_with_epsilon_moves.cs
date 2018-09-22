@@ -8,15 +8,15 @@ namespace NFA
 {
     public class NFA_with_epsilon_moves : NFA
     {
-        public override TapHop<State> deltaStar(string w)
+        public override Tập_Hợp<State> deltaStar(string w)
         {
             return base.deltaStar(w);
         }
 
         public Func<bool> isEpsilon;
-        public TapHop<State> EpsilonClosure(State b)
+        public Tập_Hợp<State> EpsilonClosure(State b)
         {
-            var vertices = new TapHop<State> { b };
+            var vertices = new Tập_Hợp<State> { b };
             while (true)
             {
                 var previousCount = vertices.Count;

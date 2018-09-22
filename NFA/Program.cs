@@ -27,39 +27,39 @@ namespace NFA
             var binaryMachine = new NFA()
             {
                 q0 = State.q0,
-                F = new TapHop<State>() { State.q2, State.q4 },
+                F = new Tập_Hợp<State>() { State.q2, State.q4 },
             };
 
             binaryMachine.delta = (q, c) =>
             {
-                var Q = new TapHop<State>();
+                var Q = new Tập_Hợp<State>();
                 switch (q)
                 {
                     case State.q0:
                         if (c == '0')
-                            return new TapHop<State> { State.q0, State.q3 };
+                            return new Tập_Hợp<State> { State.q0, State.q3 };
                         else
-                            return new TapHop<State>() { State.q0, State.q1 };
+                            return new Tập_Hợp<State>() { State.q0, State.q1 };
                     case State.q1:
                         if (c == '0')
-                            return new TapHop<State> { };
+                            return new Tập_Hợp<State> { };
                         else
-                            return new TapHop<State> { State.q2 };
+                            return new Tập_Hợp<State> { State.q2 };
                     case State.q2:
                         if (c == '0')
-                            return new TapHop<State> { State.q2 };
+                            return new Tập_Hợp<State> { State.q2 };
                         else
-                            return new TapHop<State> { State.q2 };
+                            return new Tập_Hợp<State> { State.q2 };
                     case State.q3:
                         if (c == '0')
-                            return new TapHop<State> { State.q4 };
+                            return new Tập_Hợp<State> { State.q4 };
                         else
-                            return new TapHop<State> { };
+                            return new Tập_Hợp<State> { };
                     case State.q4:
                         if (c == '0')
-                            return new TapHop<State> { State.q4 };
+                            return new Tập_Hợp<State> { State.q4 };
                         else
-                            return new TapHop<State> { State.q4 };
+                            return new Tập_Hợp<State> { State.q4 };
                     default:
                         break;
                 }
